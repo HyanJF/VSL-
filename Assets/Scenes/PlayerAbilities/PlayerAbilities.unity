@@ -134,6 +134,7 @@ GameObject:
   - component: {fileID: 201303425}
   - component: {fileID: 201303424}
   - component: {fileID: 201303426}
+  - component: {fileID: 201303427}
   m_Layer: 0
   m_Name: Player
   m_TagString: Untagged
@@ -224,6 +225,31 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   speed: 10
   playerCamera: {fileID: 1582064683}
+--- !u!114 &201303427
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 201303423}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 7532e475b00ef884a90b3499cf63797e, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  ability1:
+    ability: {fileID: 11400000, guid: 6985edd0cacc89442b63035ce677b8fc, type: 2}
+    keyCode: 113
+  ability2:
+    ability: {fileID: 11400000, guid: a3e55646482b3cc46b5723ad18e05de2, type: 2}
+    keyCode: 119
+  ability3:
+    ability: {fileID: 11400000, guid: 65ddad99cee253946b0619a13248e384, type: 2}
+    keyCode: 101
+  ability4:
+    ability: {fileID: 0}
+    keyCode: 114
+  player: {fileID: 201303423}
 --- !u!1 &342347500
 GameObject:
   m_ObjectHideFlags: 0

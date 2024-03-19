@@ -10,6 +10,8 @@ public class PointAndShoot : MonoBehaviour
     public GameObject bulletPrefab;
     public GameObject bulletStart;
     public GameObject rotationPoint;
+    Vector3 difference;
+    float rotationZ;
 
     public float bulletSpeed;
 
@@ -23,33 +25,25 @@ public class PointAndShoot : MonoBehaviour
     {
         crosshair.transform.position = (Vector2)playerCamera.ScreenToWorldPoint(Input.mousePosition);
 
-        Vector3 difference = crosshair.transform.position - rotationPoint.transform.position;
-        float rotationZ = Mathf.Atan2(difference.y, difference.x) * Mathf.Rad2Deg;
+        difference = crosshair.transform.position - rotationPoint.transform.position;
+        rotationZ = Mathf.Atan2(difference.y, difference.x) * Mathf.Rad2Deg;
         rotationPoint.transform.rotation = Quaternion.Euler(0.0f, 0.0f, rotationZ);
 
         if (Input.GetMouseButtonDown(0))
         {
-            float distance = difference.magnitude;
-            Vector2 direction = difference / distance;
-            direction.Normalize();
-            FireBullet(direction, rotationZ);
+            FireBullet(bulletPrefab, bulletSpeed);
         }
     }
 
 
-    void FireBullet(Vector2 direction, float rotationZ)
+    public void FireBullet(GameObject _bulletPrefab, float _bulletSpeed)
     {
-        GameObject bullet = Instantiate(bulletPrefab) as GameObject;
-        bullet.transform.position = bulletStart.transform.position;
-        bullet.transform.rotation = Quaternion.Euler(0.0f, 0.0f, rotationZ);
-        bullet.GetComponent<Rigidbody2D>().velocity = direction * bulletSpeed * Time.deltaTime;
-    }
-
-    public void FireBullet(Vector2 direction, float rotationZ, GameObject _bulletPrefab, float _bulletSpeed)
-    {
+        float distance = difference.magnitude;
+        Vector2 direction = difference / distance;
+        direction.Normalize();
         GameObject bullet = Instantiate(_bulletPrefab) as GameObject;
         bullet.transform.position = bulletStart.transform.position;
         bullet.transform.rotation = Quaternion.Euler(0.0f, 0.0f, rotationZ);
-        bullet.GetComponent<Rigidbody2D>().velocity = direction * _bulletSpeed * Time.deltaTime;
+        bullet.GetComponent<Rigidbody2D>().velocity = direction * bulletSpeed * Time.deltaTime;
     }
 }
