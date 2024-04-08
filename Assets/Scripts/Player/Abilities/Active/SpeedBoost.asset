@@ -12,6 +12,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: bbcedf10b6f563140ab57082c6c3435c, type: 3}
   m_Name: SpeedBoost
   m_EditorClassIdentifier: 
+  abilityName: Speed boost
+  abilityDescription: Gives the player a smal speed boost
   cooldown: 5
   activeDuration: 5
   speedMultiplier: 2
