@@ -14,7 +14,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   abilityName: Big shot
   abilityDescription: Shoots a bigger an stronger projectile
-  cooldown: 5
+  cooldown: 1
   activeDuration: 0
-  bullet: {fileID: 8778740075536475900, guid: 8b407529596f11f4e8d53692a485cdd8, type: 3}
-  bulletSpeed: 10000
+  bullet: {fileID: 2254330417644499866, guid: 7e161dfa86f8ab64090ea6cf06f39dfe, type: 3}
+  bulletSpeed: 0.5
