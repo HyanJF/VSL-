@@ -928,7 +928,7 @@ MonoBehaviour:
     ability: {fileID: 11400000, guid: 65ddad99cee253946b0619a13248e384, type: 2}
     keyCode: 101
   ability4:
-    ability: {fileID: 0}
+    ability: {fileID: 11400000, guid: 6482cbc7417ddb749bf3ded4757e7662, type: 2}
     keyCode: 114
   player: {fileID: 1391264941}
 --- !u!114 &1391264943
