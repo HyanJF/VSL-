@@ -13,7 +13,7 @@ GameObject:
   - component: {fileID: 2066109732347340042}
   - component: {fileID: -2441822046827382108}
   - component: {fileID: -4678346428701330372}
-  m_Layer: 0
+  m_Layer: 6
   m_Name: DOTBullet
   m_TagString: Untagged
   m_Icon: {fileID: 0}
