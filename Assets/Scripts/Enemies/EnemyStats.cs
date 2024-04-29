@@ -4,11 +4,11 @@ using UnityEngine;
 
 public class EnemyStats : MonoBehaviour
 {
-    private float movementSpeed;
-    private int attack;
-    private float attackSpeed;
-    private int health;
-    public EnemyBehavior behavior;
+    public float movementSpeed;
+    public int attack;
+    public float attackSpeed;
+    public int health;
+    public EnemyBehaviour behavior;
 
     public int Attack
     {
