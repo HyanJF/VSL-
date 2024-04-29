@@ -7,9 +7,10 @@ using UnityEngine;
 public class DOTProjectile : MonoBehaviour
 {
     public GameObject AOEPrefab;
+    public string tag;
     private void OnTriggerEnter2D(Collider2D other)
     {
-        if (other.CompareTag("Enemy"))
+        if (other.CompareTag(tag))
         {
             Debug.Log("fire");
             other.GetComponent<StatusEffectManager>().ApplyDOT(4);

@@ -14,7 +14,7 @@ GameObject:
   - component: {fileID: -2441822046827382108}
   - component: {fileID: -4678346428701330372}
   m_Layer: 6
-  m_Name: DOTBullet
+  m_Name: DOTBulletEnemy
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -162,4 +162,4 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   AOEPrefab: {fileID: 7347646439639387649, guid: 7a223a680fa21404389aae936d5dfb09, type: 3}
-  tag: Enemy
+  tag: Player
