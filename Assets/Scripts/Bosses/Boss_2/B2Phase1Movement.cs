@@ -2,7 +2,7 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
-public class Boss2Movement : MonoBehaviour
+public class B2Phase1Movement : MonoBehaviour
 {
     public Transform centerObject;
     public float radius;
@@ -10,8 +10,20 @@ public class Boss2Movement : MonoBehaviour
 
     private float angle = 0f;
 
+    private void Awake()
+    {
+        GetComponent<B2Phase2Movement>().enabled = false;
+    }
+
     void Update()
     {
+
+        if (Input.GetKeyDown(KeyCode.X))
+        {
+            GetComponent<B2Phase2Movement>().enabled = true;
+            GetComponent<B2Phase1Movement>().enabled = false;
+        }
+
         angle += speed * Time.deltaTime;
 
 
