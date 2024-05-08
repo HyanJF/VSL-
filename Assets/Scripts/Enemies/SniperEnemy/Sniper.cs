@@ -1,7 +1,3 @@
-using System.Collections;
-using System.Collections.Generic;
-using Unity.VisualScripting;
-using Unity.VisualScripting.Antlr3.Runtime.Misc;
 using UnityEngine;
 
 public class Sniper : EnemyBehaviour
@@ -31,7 +27,6 @@ public class Sniper : EnemyBehaviour
         detector = GetComponent<CircleCollider2D>();  
         runDetector = GetComponentInChildren<SecondCollider>();
         runDetector.Tag = targetTag;
-
     }
 
     public override void Behaviour()
@@ -49,9 +44,6 @@ public class Sniper : EnemyBehaviour
             case State.shooting:
                 Shooting();
                 break;
-            case State.running:
-                Run();
-                break;
             default:
                 break;
         }
@@ -62,6 +54,12 @@ public class Sniper : EnemyBehaviour
         Vector3 direction = target.transform.position - transform.position;
         transform.Translate(stats.MovementSpeed * Time.deltaTime * direction.normalized);
     }
+
+    float rotationPoint;
+    float rotationPointX;
+    float rotationPointY; 
+    [SerializeField] float radius;   
+     [SerializeField] float rotationSpeed;  
     void Shooting()
     {
         shootTimer += Time.deltaTime;
@@ -70,17 +68,16 @@ public class Sniper : EnemyBehaviour
             shootTimer = 0;
             aim.FireBullet(bulletPrefab, bulletSpeed, target.transform);
         }
-    }
-    public void Run()
-    {
-        Vector2 move = (transform.position - target.transform.position);
-        transform.position += stats.movementSpeed * Time.deltaTime * (Vector3)move.normalized;
+        rotationPointX = Mathf.Sin(rotationPoint) * radius + target.transform.position.x;
+        rotationPointY = Mathf.Cos(rotationPoint) * radius + target.transform.position.y;
+        transform.position = new Vector2(rotationPointX, rotationPointY);
+        rotationPoint += (rotationSpeed * Time.deltaTime) / radius;
     }
     private void OnTriggerEnter2D(Collider2D collision)
     {
         if (collision.gameObject.CompareTag(targetTag))
         {
-            Debug.Log("sus");
+            rotationPoint = transform.position.x;
             currentSate = State.shooting;
         }
     }

@@ -19,7 +19,6 @@ public class SecondCollider : MonoBehaviour
         if (collision.gameObject.CompareTag(targetTag))
         {
             parent.currentSate = Sniper.State.running;
-            Debug.Log(parent.currentSate);
         }
     }
     private void OnTriggerExit2D(Collider2D collision)

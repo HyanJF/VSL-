@@ -32,11 +32,9 @@ public class HealerBehaviour : EnemyBehaviour
                 healTimer += Time.deltaTime;
                 if (healCooldown <= healTimer)
                 {
-                    Debug.Log(targetStats.Health);
                     targetStats.Health += healAmount;
                     stats.Health += healAmount;
                     healTimer = 0;
-                    Debug.Log(targetStats.Health);
                 }
             }
             else
