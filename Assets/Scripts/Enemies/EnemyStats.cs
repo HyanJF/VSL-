@@ -8,7 +8,20 @@ public class EnemyStats : MonoBehaviour
     public int attack;
     public float attackSpeed;
     public int health;
-    public EnemyBehaviour behavior;
+    public EnemyBehaviour behaviour;
+
+    private void Awake()
+    {
+        behaviour.GetComponent<EnemyBehaviour>();
+    }
+
+    private void Update()
+    {
+        if (behaviour != null)
+        {
+            behaviour.Behaviour();
+        }
+    }
 
     public int Attack
     {

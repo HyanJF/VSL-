@@ -8,7 +8,6 @@ public class EnemyAim : MonoBehaviour
     public GameObject rotationPoint;
     Vector3 difference;
     float rotationZ;
-    public float bulletSpeed;
     
     public void FireBullet(GameObject _bulletPrefab, float _bulletSpeed, Transform player)
     {
@@ -21,6 +20,6 @@ public class EnemyAim : MonoBehaviour
         GameObject bullet = Instantiate(_bulletPrefab);
         bullet.transform.position = bulletStart.transform.position;
         bullet.transform.rotation = Quaternion.Euler(0.0f, 0.0f, rotationZ);
-        bullet.GetComponent<Rigidbody2D>().velocity = direction * _bulletSpeed * Time.deltaTime;
+        bullet.GetComponent<Rigidbody2D>().velocity = _bulletSpeed  * direction;
     }
 }
