@@ -751,6 +751,7 @@ MonoBehaviour:
   numberProjectiles: 5
   numberRounds: 5
   spiningProjectilePrefab: {fileID: 6724045263529938977, guid: f067d1f485b39b642b67d938298dcc85, type: 3}
+  spiningProjectilesSpeed: 0.05
   dotaoePrefab: {fileID: 2254330417644499866, guid: 9b2c54070449fbc4b92beb70d9924a34, type: 3}
   totalShootsdotaoe: 3
   dotaoeSpeed: 5
@@ -771,7 +772,6 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   bulletStart: {fileID: 1181551886}
   rotationPoint: {fileID: 199638025}
-  bulletSpeed: 25
 --- !u!1 &1239627577
 GameObject:
   m_ObjectHideFlags: 0

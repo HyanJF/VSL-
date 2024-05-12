@@ -122,21 +122,28 @@ public class Boss1_Manager : MonoBehaviour
     [SerializeField] private int numberProjectiles;
     [SerializeField] private int numberRounds;
     [SerializeField] private GameObject spiningProjectilePrefab;
+    [SerializeField] private float spiningProjectilesSpeed;
     IEnumerator SpiningProjectiles()
     {
-        NextMove();
+        currentMove = movementState.chase;
         
-        for (float i = 0; i < 1; i+=1/numberRounds)
+        for (float i = 0; i < numberProjectiles; i++)
         { 
-            for (float j = 0; j < 1; j+=1/numberProjectiles)
+            for (float j = 0; j < numberRounds; j++)
             {
-                float x = (float)Math.Cos(j);
-                float y = (float)Math.Sin(j);
+                float x = (float)Math.Cos(j + (i/Math.PI));
+                float y = (float)Math.Sin(j + (i / Math.PI));
                 Vector2 spawnPos = new Vector2(x+transform.position.x,y + transform.position.y);
                 GameObject bullet = Instantiate(spiningProjectilePrefab, spawnPos, spiningProjectilePrefab.transform.rotation);
-                bullet.GetComponent<Rigidbody2D>().AddForce((Vector2)transform.position-spawnPos);
+                Vector2 direction = ((Vector2)transform.position - spawnPos);
+                bullet.GetComponent<Rigidbody2D>().AddForce(direction.normalized*spiningProjectilesSpeed);
+                
             }
+            yield return new WaitForSeconds(0.3f);
         }
+
+
+
         yield return new WaitForSeconds(5);
         NextAttack(0);
     }
