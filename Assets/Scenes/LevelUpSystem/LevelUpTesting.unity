@@ -283,6 +283,10 @@ PrefabInstance:
       propertyPath: Stats
       value: 
       objectReference: {fileID: 1501556516}
+    - target: {fileID: 37390338132182773, guid: 682d672651e9869429abdc33c0116ae8, type: 3}
+      propertyPath: xpRequire
+      value: 1
+      objectReference: {fileID: 0}
     - target: {fileID: 3071257228130138754, guid: 682d672651e9869429abdc33c0116ae8, type: 3}
       propertyPath: m_GravityScale
       value: 0
@@ -386,7 +390,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 1206853995209301055, guid: 1e8bcca8a4db46343b87abddd64cadc7, type: 3}
       propertyPath: xpValeu
-      value: 10
+      value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 3139093387148435317, guid: 1e8bcca8a4db46343b87abddd64cadc7, type: 3}
       propertyPath: m_GravityScale

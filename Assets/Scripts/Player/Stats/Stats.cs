@@ -41,9 +41,9 @@ public class Stats : MonoBehaviour
         return speed;
     }
     
-    public void lvlUpdate(int addlvl)
+    public void lvlUpdate()
     {
-        lvl += addlvl;
+        lvl++;
     }
     public int LvlActual()
     {
