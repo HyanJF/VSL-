@@ -1,5 +1,6 @@
 using System.Collections;
 using System.Collections.Generic;
+using System.Security.Cryptography;
 using UnityEditor;
 using UnityEngine;
 
@@ -7,7 +8,7 @@ public class Stats : MonoBehaviour
 {
     // variables
     [SerializeField] private float life;
-    [SerializeField] private float lvl;
+    [SerializeField] private int lvl;
     [SerializeField] private float speed;
     [SerializeField] private float DeadAnimationTime;
     // variables balas 
@@ -38,5 +39,14 @@ public class Stats : MonoBehaviour
     public float Speed()
     {
         return speed;
+    }
+    
+    public void lvlUpdate(int addlvl)
+    {
+        lvl += addlvl;
+    }
+    public int LvlActual()
+    {
+        return lvl;
     }
 }
