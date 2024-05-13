@@ -4,13 +4,13 @@ using UnityEngine;
 
 public class StatusEffectManager : MonoBehaviour
 {
-    private DOTHealth healthScript;
+    private EnemyStats healthScript;
     public int dmg;
     public List<int> tickTimer = new List<int>();
 
     void Start()
     {
-        healthScript = GetComponent<DOTHealth>();
+        healthScript = GetComponent<EnemyStats>();
     }
 
     public void ApplyDOT(int ticks)
@@ -24,6 +24,8 @@ public class StatusEffectManager : MonoBehaviour
         {
             tickTimer.Add(ticks);
         }
+      //Si se usa el tesla junto con las balas de fuego, se stackean demasiados ticks lo cual puede dar pedos muy cabrones de memoria
+      //Hay que  arreglar eso eventualmente
     }
 
     IEnumerator DOT()
@@ -34,7 +36,7 @@ public class StatusEffectManager : MonoBehaviour
             {
                 tickTimer[i]--;
             }
-            healthScript.health -= dmg;
+            healthScript.Health -= dmg;
             tickTimer.RemoveAll(i => i == 0);
             yield return new WaitForSeconds(0.75f);
         }

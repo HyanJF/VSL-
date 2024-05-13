@@ -5,6 +5,7 @@ using UnityEngine;
 
 public class PlayerMovement : MonoBehaviour
 {
+    [SerializeField] GameObject stats;
     public float speed;
     private Vector2 target;
     [SerializeField] Camera playerCamera;
@@ -12,6 +13,7 @@ public class PlayerMovement : MonoBehaviour
     private void Start()
     {
         target = transform.position;
+        speed = stats.GetComponentInChildren<Stats>().Speed();
     }
 
     private void Update()
