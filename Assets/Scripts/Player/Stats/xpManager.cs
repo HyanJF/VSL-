@@ -2,6 +2,7 @@ using System.Collections;
 using System.Collections.Generic;
 using System.Xml.Linq;
 using UnityEngine;
+using static Unity.Burst.Intrinsics.X86;
 
 public class xpManager : MonoBehaviour
 {
@@ -13,6 +14,11 @@ public class xpManager : MonoBehaviour
     private void Start()
     {
         Stats = GetComponent<Stats>();
+    }
+
+    private void Update()
+    {
+        updateXp();
     }
 
     public int showXpNeded()
@@ -27,17 +33,19 @@ public class xpManager : MonoBehaviour
     
     public void AddXp(int xpAmmount)
     {
-        int aux;
         xpActual += xpAmmount;
-        if(xpActual >= xpRequire)
+    }
+
+    private void updateXp()
+    {
+        if (xpActual >= xpRequire)
         {
-            aux = xpActual - xpRequire;
+            int aux = xpActual - xpRequire;
             newXpAmmout();
             xpActual = 0;
             Stats.lvlUpdate();
             xpActual += aux;
         }
-        
     }
     private void newXpAmmout()
     {
