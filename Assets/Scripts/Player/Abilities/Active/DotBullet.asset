@@ -12,10 +12,10 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: cd5caf79c09c6c34d8ca0ed76c2acbf1, type: 3}
   m_Name: DotBullet
   m_EditorClassIdentifier: 
-  abilityName: 
-  abilityDescription: 
-  sprite: {fileID: 0}
-  cooldown: 0
+  abilityName: DotBullet
+  abilityDescription: Horny bullet XD
+  sprite: {fileID: 21300000, guid: 16b7699b11cdedb41bbca106529c0072, type: 3}
+  cooldown: 10
   activeDuration: 0
   bullet: {fileID: 0}
-  bulletSpeed: 0
+  bulletSpeed: 10
