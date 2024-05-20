@@ -5,6 +5,8 @@ using UnityEngine;
 
 public class PlayerAbilities : MonoBehaviour
 {
+    public static PlayerAbilities Instance;
+
     [Serializable]
     public struct AbilityHolder
     {
@@ -19,6 +21,17 @@ public class PlayerAbilities : MonoBehaviour
 
     public GameObject player;
 
+    public void Awake()
+    {
+        if(Instance == null)
+        {
+            Instance = this;
+        }
+        else
+        {
+            Destroy(this);
+        }
+    }
 
     private void Update()
     {
