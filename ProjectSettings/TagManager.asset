@@ -9,6 +9,7 @@ TagManager:
   - PlayerBullet
   - GoesBoom
   - Xp
+  - Roulette manager
   layers:
   - Default
   - TransparentFX
