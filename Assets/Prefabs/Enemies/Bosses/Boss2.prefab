@@ -29,7 +29,7 @@ Transform:
   m_GameObject: {fileID: 8091409956081247597}
   serializedVersion: 2
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: -6.21, y: 3, z: 0}
+  m_LocalPosition: {x: 17.698807, y: 10.8997965, z: 0}
   m_LocalScale: {x: 1.0679, y: 2.9366, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children: []
@@ -99,9 +99,9 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 5532a5b4b9a366b4b887b304a81a8ff9, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  centerObject: {fileID: 0}
   radius: 5
   speed: 1.5
+  targetTag: Player
 --- !u!114 &5317312942178458191
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -115,7 +115,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   bulletPrefab: {fileID: 7295956347948064895, guid: 101bdbe87347cf94d80893c39381d8d8, type: 3}
-  target: {fileID: 0}
+  target: {fileID: 2590252396047421371, guid: 682d672651e9869429abdc33c0116ae8, type: 3}
   fireInterval: 1
   bulletSpeed: 10
 --- !u!114 &3425265179902263620
@@ -130,7 +130,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 36259976f60236544becaed4e1f954a4, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  jugador: {fileID: 0}
+  jugador: {fileID: 2590252396047421371, guid: 682d672651e9869429abdc33c0116ae8, type: 3}
   esperaInicial: 1
   duracionTemblor: 0.5
   velocidadMovimiento: 5

@@ -5,12 +5,17 @@ using UnityEngine;
 public class Boss2Attack : MonoBehaviour
 {
     public GameObject bulletPrefab; 
-    public Transform target; 
+    public GameObject target; 
     public float fireInterval = 1f; 
-    public float bulletSpeed = 10f; 
-
+    public float bulletSpeed = 10f;
+    public string targetTag = "Player";
     private float timer = 0f;
 
+    private void Start()
+    {
+        target = GameObject.FindGameObjectWithTag(targetTag);
+        
+    }
     void Update()
     {
 
@@ -24,7 +29,7 @@ public class Boss2Attack : MonoBehaviour
             timer = 0f;
 
             // Direcction a donde disparar
-            Vector3 direction = (target.position - transform.position).normalized;
+            Vector3 direction = (target.transform.position - transform.position).normalized;
 
             // Mandamos llamar a la bala
             GameObject bullet = Instantiate(bulletPrefab, transform.position, Quaternion.identity);

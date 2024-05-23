@@ -4,10 +4,11 @@ using UnityEngine;
 
 public class B2Phase2Movement : MonoBehaviour
 {
-    public Transform jugador; 
+    public GameObject jugador; 
     public float esperaInicial = 1f; 
     public float duracionTemblor = 0.5f; 
-    public float velocidadMovimiento = 5f; 
+    public float velocidadMovimiento = 5f;
+    public string targetTag = "Player";
 
     private float tiempoEspera;
     private bool temblando = false;
@@ -16,6 +17,7 @@ public class B2Phase2Movement : MonoBehaviour
     {
         // Iniciar la corutina
         StartCoroutine(CicloMovimiento());
+        jugador = GameObject.FindGameObjectWithTag(targetTag);
     }
 
     IEnumerator CicloMovimiento()
@@ -31,7 +33,7 @@ public class B2Phase2Movement : MonoBehaviour
             temblando = false;
 
             // Obtener la posición del jugador
-            Vector3 posicionJugador = jugador.position;
+            Vector3 posicionJugador = jugador.transform.position;
 
             // Moverse hacia la posición del jugador
             while (Vector3.Distance(transform.position, posicionJugador) > 0.1f)
