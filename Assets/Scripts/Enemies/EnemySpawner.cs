@@ -4,6 +4,7 @@ using UnityEngine;
 
 public class EnemySpawner : MonoBehaviour
 {
+    //Alc creo que est script ya no sirve pero por si a caso aun no lo borro
     public GameObject prefabEnemy;
     public GameObject spawnPosition;
     private int counter = 0;
@@ -31,6 +32,8 @@ public class EnemySpawner : MonoBehaviour
         {
             waitTime = 10;
             Debug.Log("El boss esta vivo");
+            GetComponent<BossSpawner>().enabled = true;
+            GetComponent<EnemySpawner>().enabled = false;
         }
         
     }
