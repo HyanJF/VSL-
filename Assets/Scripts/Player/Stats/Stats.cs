@@ -15,9 +15,18 @@ public class Stats : MonoBehaviour
     public int deathCounter;
     // variables balas 
 
+    public static Stats instance;
     // Funciones
     private void Start()
     {
+        if (instance == null)
+        {
+            instance = this;
+        }
+        else
+        {
+            Destroy(gameObject);
+        }
         // provicional
         takeDamage(0);
     }

@@ -11,7 +11,6 @@ public class ChaserBehaviour : EnemyBehaviour
         targetObject = GameObject.FindGameObjectWithTag(targetTag);
         stats = GetComponent<EnemyStats>();
         ES = GetComponent<EnemyStats>();
-        ES.playerCount = targetObject;
     }
 
 
