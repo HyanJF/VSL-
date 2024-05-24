@@ -12,6 +12,9 @@ public class PointAndShoot : MonoBehaviour
     public GameObject rotationPoint;
     Vector3 difference;
     float rotationZ;
+    bool isBulletReady = false;
+    public float bulletDelay;
+    float bulletTimer = 0;
 
     public float bulletSpeed;
 
@@ -28,13 +31,27 @@ public class PointAndShoot : MonoBehaviour
         difference = crosshair.transform.position - rotationPoint.transform.position;
         rotationZ = Mathf.Atan2(difference.y, difference.x) * Mathf.Rad2Deg;
         rotationPoint.transform.rotation = Quaternion.Euler(0.0f, 0.0f, rotationZ);
-
-        if (Input.GetMouseButtonDown(0))
+        
+        if(Input.GetMouseButton(0))
         {
-            FireBullet(bulletPrefab, bulletSpeed);
+            if (!isBulletReady)
+            {
+                bulletTimer += Time.deltaTime;
+            }
+            else
+            {
+                FireBullet(bulletPrefab, bulletSpeed);
+                bulletTimer = 0;
+            }
+            isBulletReady = bulletDelay < bulletTimer;
         }
+       
     }
 
+    private void OnMouseDown()
+    {
+        
+    }
 
     public void FireBullet(GameObject _bulletPrefab, float _bulletSpeed)
     {

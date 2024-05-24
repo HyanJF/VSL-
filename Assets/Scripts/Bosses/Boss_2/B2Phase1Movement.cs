@@ -10,6 +10,7 @@ public class B2Phase1Movement : MonoBehaviour
     public string targetTag = "Player";
 
     private float angle = 0f;
+    int counter = 0;
 
     private void Awake()
     {
@@ -19,12 +20,6 @@ public class B2Phase1Movement : MonoBehaviour
 
     void Update()
     {
-
-        if (Input.GetKeyDown(KeyCode.X))
-        {
-            GetComponent<B2Phase2Movement>().enabled = true;
-            GetComponent<B2Phase1Movement>().enabled = false;
-        }
 
         angle += speed * Time.deltaTime;
 
@@ -38,5 +33,16 @@ public class B2Phase1Movement : MonoBehaviour
         // Esto es para que el jefe mire hacia el jugador, pero a la mera se ve raro dependiendo del sprite
         //transform.right = centerObject.position - transform.position;
         
+    }
+
+    private void OnTriggerEnter2D(Collider2D collision)
+    {
+        counter++;
+        Debug.Log(counter);
+        if (counter >= 25)
+        {
+            GetComponent<B2Phase2Movement>().enabled = true;
+            GetComponent<B2Phase1Movement>().enabled = false;
+        }
     }
 }
