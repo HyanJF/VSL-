@@ -12,6 +12,8 @@ public class SpawnManager : MonoBehaviour
     //Espera entre spawns
     public float timeWait = 1f;
 
+    public GameObject player;
+
     void Start()
     {
         // Inicia la invocación repetitiva de la función SpawnPrefab
@@ -20,10 +22,13 @@ public class SpawnManager : MonoBehaviour
 
     private void Update()
     {
-        if (Input.GetKeyUp(KeyCode.S)) 
+        if (player.GetComponentInChildren<Stats>().deathCounter == 8) 
         { 
-        GetComponentInChildren<BossSpawner>().enabled = true;
-        
+            GetComponentInChildren<BossSpawner>().enabled = true;
+        }
+        if (player.GetComponentInChildren<Stats>().deathCounter == 16)
+        {
+            spawnPoints[1].GetComponentInChildren<BossSpawner>().enabled = true;
         }
     }
 
