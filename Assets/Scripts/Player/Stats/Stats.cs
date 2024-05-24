@@ -11,6 +11,8 @@ public class Stats : MonoBehaviour
     [SerializeField] private int lvl;
     [SerializeField] private float speed;
     [SerializeField] private float DeadAnimationTime;
+
+    public int deathCounter;
     // variables balas 
 
     // Funciones

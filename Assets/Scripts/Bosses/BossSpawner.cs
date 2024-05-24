@@ -14,11 +14,6 @@ public class BossSpawner : MonoBehaviour
         SpawnBoss(prefabBoss, spawnPosition, 0, 0);
     }
 
-    // Update is called once per frame
-    void Update()
-    {
-        
-    }
     public void SpawnBoss(GameObject enemy, GameObject position, int counter, int timer)
     {
         Instantiate(enemy);
