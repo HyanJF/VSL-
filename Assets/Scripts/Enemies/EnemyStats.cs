@@ -10,25 +10,34 @@ public class EnemyStats : MonoBehaviour
     public int health;
     public EnemyBehaviour behaviour;
 
-    public GameObject playerCount;
-
     private void Awake()
     {
-        behaviour.GetComponent<EnemyBehaviour>();
+        try
+        {
+            behaviour.GetComponent<EnemyBehaviour>();
+        }
+        catch
+        {
+
+        }
+ 
     }
 
     private void Update()
-    {
+    {   
+        if(health <= 0)
+        {
+            Stats.instance.deathCounter++;
+            Destroy(gameObject);
+            Debug.Log("Die");
+        }
+
         if (behaviour != null)
         {
             behaviour.Behaviour();
         }
 
-        if(health <= 0)
-        {
-            playerCount.GetComponentInChildren<Stats>().deathCounter++;
-            Destroy(gameObject);
-        }
+        
     }
 
     public int Attack
