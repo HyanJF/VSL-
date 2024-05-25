@@ -7,7 +7,7 @@ public class EnemyStats : MonoBehaviour
     public float movementSpeed;
     public int attack;
     public float attackSpeed;
-    public int health;
+    public float health;
     public EnemyBehaviour behaviour;
 
     private void Awake()
@@ -58,7 +58,7 @@ public class EnemyStats : MonoBehaviour
         set { movementSpeed = value; }
     }
 
-    public int Health
+    public float Health
     {
         get { return health; }
         set { health = value; } 

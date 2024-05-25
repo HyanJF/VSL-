@@ -5,15 +5,17 @@ using UnityEngine;
 
 public class PlayerMovement : MonoBehaviour
 {
-    [SerializeField] GameObject stats;
+    
     public float speed;
     private Vector2 target;
     [SerializeField] Camera playerCamera;
+    public Animator animator;
+    public float minX,minY,maxX, maxY;
 
     private void Start()
     {
         target = transform.position;
-        speed = stats.GetComponentInChildren<Stats>().Speed();
+        speed = Stats.instance.Speed();
     }
 
     private void Update()
@@ -22,8 +24,17 @@ public class PlayerMovement : MonoBehaviour
         {
             target = playerCamera.ScreenToWorldPoint(Input.mousePosition);
         }
-
+        if(target.x< minX || target.x> maxX )
+        {
+            target.x = transform.position.x;    
+        }
+        if (target.y < minY || target.y > maxY)
+        {
+            target.y = transform.position.y;
+        }
         transform.position = Vector2.MoveTowards(transform.position, target, speed*Time.deltaTime);
+        animator.SetBool("IsMoving",transform.position!=(Vector3)target);
+
     }
 
 }

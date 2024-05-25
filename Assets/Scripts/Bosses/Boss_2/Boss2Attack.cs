@@ -5,7 +5,7 @@ using UnityEngine;
 public class Boss2Attack : MonoBehaviour
 {
     public GameObject bulletPrefab; 
-    public GameObject target; 
+    private GameObject target; 
     public float fireInterval = 1f; 
     public float bulletSpeed = 10f;
     public string targetTag = "Player";
@@ -37,6 +37,7 @@ public class Boss2Attack : MonoBehaviour
 
             Rigidbody2D rb = bullet.GetComponent<Rigidbody2D>();
             rb.velocity = direction * bulletSpeed;
+            bullet.GetComponent<DestroyBullets>();
         }
     }
 }

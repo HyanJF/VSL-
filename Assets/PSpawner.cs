@@ -2,17 +2,18 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
-public class Borrame4 : MonoBehaviour
+public class PSpawner : MonoBehaviour
 {
-    // Start is called before the first frame update
+    public GameObject playerPrefab;
+    public GameObject spawner;
     void Start()
     {
-        
+        Instantiate(playerPrefab);
     }
 
     // Update is called once per frame
     void Update()
     {
-        
+
     }
 }
