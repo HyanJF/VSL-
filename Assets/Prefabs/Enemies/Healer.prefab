@@ -121,6 +121,7 @@ GameObject:
   - component: {fileID: 3289701217277254695}
   - component: {fileID: 7584923540356815893}
   - component: {fileID: 733737759849777684}
+  - component: {fileID: 5064586740905564589}
   m_Layer: 0
   m_Name: Healer
   m_TagString: Enemy
@@ -312,3 +313,17 @@ Animator:
   m_AllowConstantClipSamplingOptimization: 1
   m_KeepAnimatorStateOnDisable: 0
   m_WriteDefaultValuesOnDisable: 0
+--- !u!114 &5064586740905564589
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 6078348282911162542}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 12add309495041545bc5f3cf024073cc, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  dmg: 1
+  tickTimer: 

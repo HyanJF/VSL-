@@ -37,6 +37,7 @@ public class Boss2Attack : MonoBehaviour
 
             Rigidbody2D rb = bullet.GetComponent<Rigidbody2D>();
             rb.velocity = direction * bulletSpeed;
+            bullet.GetComponent<DestroyBullets>();
         }
     }
 }
