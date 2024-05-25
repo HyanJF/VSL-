@@ -8,6 +8,7 @@ public class B2Phase1Movement : MonoBehaviour
     public float radius;
     public float speed;
     public string targetTag = "Player";
+    public Animator animator;
 
     private float angle = 0f;
     int counter = 0;
@@ -42,6 +43,7 @@ public class B2Phase1Movement : MonoBehaviour
         if (counter >= 25)
         {
             GetComponent<B2Phase2Movement>().enabled = true;
+            animator.SetBool("IsPhase2", true);
             GetComponent<B2Phase1Movement>().enabled = false;
         }
     }
