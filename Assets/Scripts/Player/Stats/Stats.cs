@@ -25,7 +25,8 @@ public class Stats : MonoBehaviour
         }
         else
         {
-            Destroy(gameObject);
+            //Destroy(gameObject);
+            Debug.Log("Hola");
         }
         // provicional
         takeDamage(0);
