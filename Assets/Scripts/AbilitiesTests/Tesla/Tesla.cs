@@ -6,7 +6,7 @@ using UnityEngine;
 public class Tesla : MonoBehaviour
 {
 
-    public int DMG;
+    public float DMG;
    
     private void OnTriggerStay2D(Collider2D other)
     {
@@ -17,7 +17,7 @@ public class Tesla : MonoBehaviour
             try
             {
                 Debug.Log("Zapping an enemy");
-                other.GetComponent<EnemyStats>().health -= DMG;
+                other.GetComponent<EnemyStats>().health -= DMG * Time.deltaTime;
                 StartCoroutine(Wait() );
             }
             catch (NullReferenceException)

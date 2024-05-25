@@ -16,6 +16,7 @@ GameObject:
   - component: {fileID: 3065401126770953764}
   - component: {fileID: 8973795099426492115}
   - component: {fileID: 8447212816701788597}
+  - component: {fileID: 2478593172183333683}
   m_Layer: 0
   m_Name: Sniper
   m_TagString: Enemy
@@ -235,6 +236,20 @@ Animator:
   m_AllowConstantClipSamplingOptimization: 1
   m_KeepAnimatorStateOnDisable: 0
   m_WriteDefaultValuesOnDisable: 0
+--- !u!114 &2478593172183333683
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1260983774534278081}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 12add309495041545bc5f3cf024073cc, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  dmg: 1
+  tickTimer: 
 --- !u!1 &4190243656104919637
 GameObject:
   m_ObjectHideFlags: 0
