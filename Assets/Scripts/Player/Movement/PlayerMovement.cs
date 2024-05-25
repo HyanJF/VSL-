@@ -5,15 +5,16 @@ using UnityEngine;
 
 public class PlayerMovement : MonoBehaviour
 {
-    [SerializeField] GameObject stats;
+    
     public float speed;
     private Vector2 target;
     [SerializeField] Camera playerCamera;
+    public Animator animator;
 
     private void Start()
     {
         target = transform.position;
-        speed = stats.GetComponentInChildren<Stats>().Speed();
+        speed = Stats.instance.Speed();
     }
 
     private void Update()
@@ -24,6 +25,8 @@ public class PlayerMovement : MonoBehaviour
         }
 
         transform.position = Vector2.MoveTowards(transform.position, target, speed*Time.deltaTime);
+        animator.SetBool("IsMoving",transform.position!=(Vector3)target);
+
     }
 
 }
