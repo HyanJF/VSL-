@@ -131,7 +131,7 @@ Camera:
   far clip plane: 1000
   field of view: 60
   orthographic: 1
-  orthographic size: 8
+  orthographic size: 14
   m_Depth: -1
   m_CullingMask:
     serializedVersion: 2
@@ -344,6 +344,7 @@ GameObject:
   - component: {fileID: 3216289576542907473}
   - component: {fileID: 8583989794475073620}
   - component: {fileID: 1428968135301243192}
+  - component: {fileID: 6603930235055570590}
   m_Layer: 0
   m_Name: Player
   m_TagString: Player
@@ -439,10 +440,10 @@ MonoBehaviour:
   speed: 10
   playerCamera: {fileID: 5605384501648685410}
   animator: {fileID: 3216289576542907473}
-  minX: -100
-  minY: -100
-  maxX: 100
-  maxY: 100
+  minX: -48
+  minY: -42
+  maxX: 50
+  maxY: 44
 --- !u!114 &2640476711731339212
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -536,11 +537,27 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 95618a5ffbe4ceb49b85691d176f0245, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  life: 10
+  totallife: 10
+  life: 0
   lvl: 1
   speed: 10
   DeadAnimationTime: 10
   deathCounter: 0
+--- !u!114 &6603930235055570590
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 4664386327766688343}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: bc61b62975436f141bf869caabadea28, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  Stats: {fileID: 1428968135301243192}
+  xpRequire: 1
+  xpActual: 1
 --- !u!1 &4734278093115874093
 GameObject:
   m_ObjectHideFlags: 0
@@ -596,9 +613,9 @@ MonoBehaviour:
   - {fileID: 4678364585704927962}
   - {fileID: 665178778288877580}
   enemies:
-  - {fileID: 0}
-  - {fileID: 0}
-  - {fileID: 0}
+  - {fileID: 2536653046668821363, guid: 87e4fd539ada5584fa238da25f105ef4, type: 3}
+  - {fileID: 6078348282911162542, guid: bc169654524eb7148b173c9d7cd325b2, type: 3}
+  - {fileID: 1260983774534278081, guid: e4cf70ff48b04cf40832e7c8b1c9f62f, type: 3}
   timeInterval: 2
   timeWait: 1
   player: {fileID: 4664386327766688343}
@@ -910,7 +927,7 @@ PrefabInstance:
     m_Modifications:
     - target: {fileID: 3463498549966470888, guid: 1ffe3038422d34f4e97a11275d4b5479, type: 3}
       propertyPath: DMG
-      value: 1
+      value: 3
       objectReference: {fileID: 0}
     - target: {fileID: 7347646439639387649, guid: 1ffe3038422d34f4e97a11275d4b5479, type: 3}
       propertyPath: m_Name
