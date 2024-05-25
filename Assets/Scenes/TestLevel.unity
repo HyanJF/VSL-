@@ -1071,6 +1071,14 @@ PrefabInstance:
       propertyPath: minY
       value: -42
       objectReference: {fileID: 0}
+    - target: {fileID: 1428968135301243192, guid: 682d672651e9869429abdc33c0116ae8, type: 3}
+      propertyPath: life
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 1428968135301243192, guid: 682d672651e9869429abdc33c0116ae8, type: 3}
+      propertyPath: totallife
+      value: 10
+      objectReference: {fileID: 0}
     - target: {fileID: 2590252396047421371, guid: 682d672651e9869429abdc33c0116ae8, type: 3}
       propertyPath: m_LocalPosition.x
       value: -3.3383741
@@ -1138,8 +1146,42 @@ PrefabInstance:
     m_RemovedComponents: []
     m_RemovedGameObjects: []
     m_AddedGameObjects: []
-    m_AddedComponents: []
+    m_AddedComponents:
+    - targetCorrespondingSourceObject: {fileID: 4664386327766688343, guid: 682d672651e9869429abdc33c0116ae8, type: 3}
+      insertIndex: -1
+      addedObject: {fileID: 319458945}
   m_SourcePrefab: {fileID: 100100000, guid: 682d672651e9869429abdc33c0116ae8, type: 3}
+--- !u!1 &319458943 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 4664386327766688343, guid: 682d672651e9869429abdc33c0116ae8, type: 3}
+  m_PrefabInstance: {fileID: 319458942}
+  m_PrefabAsset: {fileID: 0}
+--- !u!114 &319458944 stripped
+MonoBehaviour:
+  m_CorrespondingSourceObject: {fileID: 1428968135301243192, guid: 682d672651e9869429abdc33c0116ae8, type: 3}
+  m_PrefabInstance: {fileID: 319458942}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 319458943}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 95618a5ffbe4ceb49b85691d176f0245, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+--- !u!114 &319458945
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 319458943}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: bc61b62975436f141bf869caabadea28, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  Stats: {fileID: 319458944}
+  xpRequire: 1
+  xpActual: 1
 --- !u!1 &326643284
 GameObject:
   m_ObjectHideFlags: 0
