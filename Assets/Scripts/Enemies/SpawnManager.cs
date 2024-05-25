@@ -7,6 +7,7 @@ public class SpawnManager : MonoBehaviour
 {
     public GameObject prefab;
     public Transform[] spawnPoints;
+    public GameObject[] enemies;
     // Variable pública para el intervalo de tiempo entre apariciones
     public float timeInterval = 2f;
     //Espera entre spawns
@@ -22,11 +23,11 @@ public class SpawnManager : MonoBehaviour
 
     private void Update()
     {
-        if (player.GetComponentInChildren<Stats>().deathCounter == 8) 
+        if (Stats.instance.deathCounter == 8) 
         { 
             GetComponentInChildren<BossSpawner>().enabled = true;
         }
-        if (player.GetComponentInChildren<Stats>().deathCounter == 16)
+        if (Stats.instance.deathCounter == 16)
         {
             spawnPoints[1].GetComponentInChildren<BossSpawner>().enabled = true;
         }
@@ -34,18 +35,20 @@ public class SpawnManager : MonoBehaviour
 
     void SpawnPrefab()
     {
-        if (spawnPoints.Length == 0)
+        if (spawnPoints.Length == 0 || enemies.Length == 0)
         {
             Debug.LogWarning("No haz asignado los spawns xd.");
             return;
         }
 
         // Aqui se agarra el spawn aleatorio
-        int randomIndex = Random.Range(0, spawnPoints.Length);
-        Transform spawnPoint = spawnPoints[randomIndex];
+        int SpawnerIndex = Random.Range(0, spawnPoints.Length);
+        Transform spawnPoint = spawnPoints[SpawnerIndex];
+
+        int enemiesIndex = Random.Range(0, enemies.Length);
 
         // Instancia el prefab en la posición y rotación del punto de aparición seleccionado
-        Instantiate(prefab, spawnPoint.position, spawnPoint.rotation);
+        Instantiate(enemies[enemiesIndex], spawnPoint.position, spawnPoint.rotation);
     }
 }
 
