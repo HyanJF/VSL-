@@ -3,14 +3,14 @@ using UnityEngine;
 
 public class OrbContactDamage : MonoBehaviour
 {
-    public int DMG;
+    public float DMG;
     private void OnTriggerEnter2D(Collider2D other)
     {
         
         if (other.CompareTag("Enemy"))
         {
             Debug.Log("Touched an enemy");
-            other.GetComponent<EnemyStats>().health -= DMG;
+            other.GetComponent<EnemyStats>().health -= DMG *Time.deltaTime;
         }
 
     }
