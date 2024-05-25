@@ -12,15 +12,32 @@ public class EnemyStats : MonoBehaviour
 
     private void Awake()
     {
-        behaviour.GetComponent<EnemyBehaviour>();
+        try
+        {
+            behaviour.GetComponent<EnemyBehaviour>();
+        }
+        catch
+        {
+
+        }
+ 
     }
 
     private void Update()
-    {
+    {   
+        if(health <= 0)
+        {
+            Stats.instance.deathCounter++;
+            Destroy(gameObject);
+            Debug.Log("Die");
+        }
+
         if (behaviour != null)
         {
             behaviour.Behaviour();
         }
+
+        
     }
 
     public int Attack

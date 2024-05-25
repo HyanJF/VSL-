@@ -10,6 +10,7 @@ public class HealerBehaviour : EnemyBehaviour
     [SerializeField] string targetTag;
     private bool isOnRange;
     [SerializeField] private int healAmount;
+    public Animator animator;
 
     private void Awake()
     {
@@ -29,9 +30,11 @@ public class HealerBehaviour : EnemyBehaviour
         {
             if (isOnRange)
             {
+                animator.SetBool("IsMoving", false);
                 healTimer += Time.deltaTime;
                 if (healCooldown <= healTimer)
                 {
+                    animator.SetTrigger("Heal");
                     targetStats.Health += healAmount;
                     stats.Health += healAmount;
                     healTimer = 0;
@@ -39,6 +42,7 @@ public class HealerBehaviour : EnemyBehaviour
             }
             else
             {
+                animator.SetBool("IsMoving", true);
                 Vector3 direction = target.transform.position - transform.position;
                 transform.Translate(stats.MovementSpeed * Time.deltaTime * direction.normalized);
             }

@@ -4,11 +4,13 @@ public class ChaserBehaviour : EnemyBehaviour
 {
     private GameObject targetObject;
     [SerializeField] string targetTag;
+    [SerializeField] EnemyStats ES;
 
     private void Awake()
     {
         targetObject = GameObject.FindGameObjectWithTag(targetTag);
         stats = GetComponent<EnemyStats>();
+        ES = GetComponent<EnemyStats>();
     }
 
 

@@ -1,9 +1,15 @@
-
+using System.Collections;
 using UnityEngine;
 
 public class BigBullet : MonoBehaviour
 {
     public GameObject AOEBoomPrefab;
+
+    private void Update()
+    {
+        StartCoroutine(Lifetime());
+    }
+
     private void OnTriggerEnter2D(Collider2D other)
     {
         if (other.CompareTag("Enemy"))
@@ -14,5 +20,11 @@ public class BigBullet : MonoBehaviour
             Instantiate(AOEBoomPrefab);
             Destroy(gameObject);
         }
+    }
+
+    IEnumerator Lifetime()
+    {
+        yield return new WaitForSeconds(5f);
+        Destroy(gameObject);
     }
 }
