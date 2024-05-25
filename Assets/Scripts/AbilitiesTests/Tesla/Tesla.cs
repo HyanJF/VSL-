@@ -18,19 +18,13 @@ public class Tesla : MonoBehaviour
             {
                 Debug.Log("Zapping an enemy");
                 other.GetComponent<EnemyStats>().health -= DMG * Time.deltaTime;
-                StartCoroutine(Wait() );
+                
             }
             catch (NullReferenceException)
             {
                 Debug.Log("The tesla aint teslaing");
             }
         }
-    }
-    IEnumerator Wait()
-    {
-        //No funciona esta mamada
-        yield return new WaitForSeconds(100f);
-        
     }
 
 }
