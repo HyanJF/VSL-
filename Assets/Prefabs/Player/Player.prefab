@@ -439,6 +439,10 @@ MonoBehaviour:
   speed: 10
   playerCamera: {fileID: 5605384501648685410}
   animator: {fileID: 3216289576542907473}
+  minX: -100
+  minY: -100
+  maxX: 100
+  maxY: 100
 --- !u!114 &2640476711731339212
 MonoBehaviour:
   m_ObjectHideFlags: 0
