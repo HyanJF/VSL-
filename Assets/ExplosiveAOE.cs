@@ -5,14 +5,26 @@ using UnityEngine;
 public class ExplosiveAOE : MonoBehaviour
 {
     public int DMG;
+    public bool hitsPlayer = false;
     private void OnTriggerEnter2D(Collider2D other)
     {
-        Debug.Log("And it went boom");
-        if (other.CompareTag("Enemy"))
+        if (!hitsPlayer)
         {
-            other.GetComponent<EnemyStats>().health -= DMG;
+            if (other.CompareTag("Enemy") || other.CompareTag("EnemyHealer"))
+            {
+                other.GetComponent<EnemyStats>().health -= DMG;
+            }
+
+        }
+        else
+        {
+            if (other.CompareTag("Player"))
+            {
+                Stats.instance.takeDamage(DMG);
+            }
         }
         StartCoroutine(WaitForIt());
+        
     }
 
     IEnumerator WaitForIt()

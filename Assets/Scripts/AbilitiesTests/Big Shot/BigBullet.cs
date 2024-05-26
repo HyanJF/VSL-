@@ -4,6 +4,7 @@ using UnityEngine;
 public class BigBullet : MonoBehaviour
 {
     public GameObject AOEBoomPrefab;
+    public bool hitsPlayer = false;
 
     private void Update()
     {
@@ -12,14 +13,25 @@ public class BigBullet : MonoBehaviour
 
     private void OnTriggerEnter2D(Collider2D other)
     {
-        if (other.CompareTag("Enemy"))
+        if (hitsPlayer)
         {
-            Debug.Log("Boom^2");
-            
-            AOEBoomPrefab.transform.position = this.transform.position;
-            Instantiate(AOEBoomPrefab);
-            Destroy(gameObject);
+            if (other.CompareTag("Enemy"))
+            {            
+                AOEBoomPrefab.transform.position = this.transform.position;
+                Instantiate(AOEBoomPrefab);
+                Destroy(gameObject);
+            }
         }
+        else
+        {
+            if (other.CompareTag("Player"))
+            {
+                AOEBoomPrefab.transform.position = this.transform.position;
+                Instantiate(AOEBoomPrefab);
+                Destroy(gameObject);
+            }
+        }
+       
     }
 
     IEnumerator Lifetime()

@@ -24,13 +24,13 @@ public class PlayerMovement : MonoBehaviour
         {
             target = playerCamera.ScreenToWorldPoint(Input.mousePosition);
         }
-        if(target.x< minX || target.x> maxX )
+        if(transform.position.x< minX || transform.position.x > maxX )
         {
-            target.x = transform.position.x;    
+            target.x = transform.position.x < minX ? minX : maxX;    
         }
-        if (target.y < minY || target.y > maxY)
+        if (transform.position.y < minY || transform.position.y > maxY)
         {
-            target.y = transform.position.y;
+            target.y = transform.position.y < minY ? minY : maxY;
         }
         transform.position = Vector2.MoveTowards(transform.position, target, speed*Time.deltaTime);
         animator.SetBool("IsMoving",transform.position!=(Vector3)target);

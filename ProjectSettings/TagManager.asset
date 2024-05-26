@@ -10,6 +10,7 @@ TagManager:
   - GoesBoom
   - Xp
   - BasicBullet
+  - EnemyHealer
   layers:
   - Default
   - TransparentFX
