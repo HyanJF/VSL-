@@ -39,7 +39,6 @@ public class B2Phase1Movement : MonoBehaviour
     private void OnTriggerEnter2D(Collider2D collision)
     {
         counter++;
-        Debug.Log(counter);
         if (counter >= 25)
         {
             GetComponent<B2Phase2Movement>().enabled = true;

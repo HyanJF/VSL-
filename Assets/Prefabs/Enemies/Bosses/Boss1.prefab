@@ -147,7 +147,7 @@ Transform:
   m_GameObject: {fileID: 8320331329241091748}
   serializedVersion: 2
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 16.661625, y: -6.7074304, z: 0}
+  m_LocalPosition: {x: -21.147758, y: -44.44044, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children:
@@ -229,8 +229,8 @@ MonoBehaviour:
   aim: {fileID: 6052457159109996870}
   numberProjectiles: 5
   numberRounds: 5
-  spingProjectilePrefab: {fileID: 2006680416327518119, guid: f63d76ecfeee4fa4590873f00c053ff5, type: 3}
-  dotaoePrefab: {fileID: 2254330417644499866, guid: 7e161dfa86f8ab64090ea6cf06f39dfe, type: 3}
+  spingProjectilePrefab: {fileID: 2006680416327518119, guid: f459a0db3e504584193f90b73abd830b, type: 3}
+  dotaoePrefab: {fileID: 2254330417644499866, guid: c5a7a87de4e59784db0047b411487bd1, type: 3}
   totalShootsdotaoe: 3
   dotaoeSpeed: 5
   destructibleRingPrefab: {fileID: 8220797618528829221, guid: e93c064efeb9f3246a6e681824757f3d, type: 3}

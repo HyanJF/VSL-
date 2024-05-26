@@ -4,17 +4,30 @@ using UnityEngine;
 public class DestroyBullets : MonoBehaviour
 {
     public int dmg;
+    public bool hitsPlayer = false;
 
-    private void Update()
+
+    private void Start()
     {
         StartCoroutine(Lifetime());
     }
     private void OnTriggerEnter2D(Collider2D other)
     {
-        if (other.CompareTag("Enemy"))
+        if (!hitsPlayer)
         {
-            other.GetComponent<EnemyStats>().health -= dmg;
-            Destroy(gameObject);
+            if (other.CompareTag("Enemy") || other.CompareTag("EnemyHealer"))
+            {
+                other.GetComponent<EnemyStats>().health -= dmg;
+                Destroy(gameObject);
+            }
+        }
+        else
+        {
+            if (other.CompareTag("Player"))
+            {
+                Stats.instance.takeDamage(dmg);
+                Destroy(gameObject);
+            }
         }
     }
 
