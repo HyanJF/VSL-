@@ -130,6 +130,7 @@ GameObject:
   - component: {fileID: 1516511387127839525}
   - component: {fileID: 8373591674063043490}
   - component: {fileID: 8091055629842318799}
+  - component: {fileID: -359417723685996450}
   m_Layer: 0
   m_Name: Boss1
   m_TagString: Enemy
@@ -146,7 +147,7 @@ Transform:
   m_GameObject: {fileID: 8320331329241091748}
   serializedVersion: 2
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 64.23708, y: 11.018618, z: 0}
+  m_LocalPosition: {x: 16.661625, y: -6.7074304, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children:
@@ -332,3 +333,17 @@ Animator:
   m_AllowConstantClipSamplingOptimization: 1
   m_KeepAnimatorStateOnDisable: 0
   m_WriteDefaultValuesOnDisable: 0
+--- !u!114 &-359417723685996450
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 8320331329241091748}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 12add309495041545bc5f3cf024073cc, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  dmg: 1
+  tickTimer: 
