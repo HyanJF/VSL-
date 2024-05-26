@@ -9,6 +9,7 @@ public class Stats : MonoBehaviour
     [SerializeField] private int lvl;
     [SerializeField] private float speed;
     [SerializeField] private float DeadAnimationTime;
+    [SerializeField] private GameObject gameoverPanel;
 
     public int deathCounter;
     // variables balas 
@@ -30,6 +31,7 @@ public class Stats : MonoBehaviour
         takeDamage(0);
 
         life = totallife;
+        gameoverPanel.SetActive(false);
     }
 
     public void takeDamage(float damage)
@@ -45,6 +47,7 @@ public class Stats : MonoBehaviour
     public IEnumerator dead()
     {
         yield return new WaitForSeconds(DeadAnimationTime);
+        gameoverPanel.SetActive(true);
         Destroy(gameObject);
     }
     
