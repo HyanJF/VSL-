@@ -4,13 +4,24 @@ using UnityEngine;
 
 public class AOE : MonoBehaviour
 {
+    public bool hitsPlayer = false;
     private void OnTriggerStay2D(Collider2D other)
     {
-        Debug.Log("ded");
-        if (other.CompareTag("Enemy"))
+        if (!hitsPlayer)
         {
-            other.GetComponent<StatusEffectManager>().ApplyDOT(4);
+            if (other.CompareTag("Enemy") || other.CompareTag("EnemyHealer"))
+            {
+                other.GetComponent<StatusEffectManager>().ApplyDOT(4);
+            }
         }
+        else
+        {
+            if (other.CompareTag("Player"))
+            {
+                other.GetComponent<StatusEffectManager>().ApplyDOT(4);
+            }
+        }
+       
         StartCoroutine(Wait());
     }
 

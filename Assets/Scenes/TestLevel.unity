@@ -1749,7 +1749,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 1428968135301243192, guid: 682d672651e9869429abdc33c0116ae8, type: 3}
       propertyPath: totallife
-      value: 10
+      value: 200
       objectReference: {fileID: 0}
     - target: {fileID: 2590252396047421371, guid: 682d672651e9869429abdc33c0116ae8, type: 3}
       propertyPath: m_LocalPosition.x
@@ -1809,7 +1809,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 4734278093115874093, guid: 682d672651e9869429abdc33c0116ae8, type: 3}
       propertyPath: m_IsActive
-      value: 0
+      value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 5193832703337407721, guid: 682d672651e9869429abdc33c0116ae8, type: 3}
       propertyPath: enemies.Array.data[0]
