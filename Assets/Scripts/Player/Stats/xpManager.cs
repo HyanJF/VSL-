@@ -1,8 +1,4 @@
-using System.Collections;
-using System.Collections.Generic;
-using System.Xml.Linq;
 using UnityEngine;
-using static Unity.Burst.Intrinsics.X86;
 
 public class xpManager : MonoBehaviour
 {

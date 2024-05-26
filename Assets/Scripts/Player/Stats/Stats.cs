@@ -1,12 +1,10 @@
 using System.Collections;
-using System.Collections.Generic;
-using System.Security.Cryptography;
-using UnityEditor;
 using UnityEngine;
 
 public class Stats : MonoBehaviour
 {
     // variables
+    [SerializeField] private float totallife;
     [SerializeField] private float life;
     [SerializeField] private int lvl;
     [SerializeField] private float speed;
@@ -30,6 +28,8 @@ public class Stats : MonoBehaviour
         }
         // provicional
         takeDamage(0);
+
+        life = totallife;
     }
 
     public void takeDamage(float damage)
@@ -56,6 +56,9 @@ public class Stats : MonoBehaviour
     public void lvlUpdate()
     {
         lvl++;
+        totallife++;
+        speed++;
+        life = totallife;
     }
     public int LvlActual()
     {
