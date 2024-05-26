@@ -61,7 +61,7 @@ public class PointAndShoot : MonoBehaviour
         GameObject bullet = Instantiate(_bulletPrefab);
         bullet.transform.position = bulletStart.transform.position;
         bullet.transform.rotation = Quaternion.Euler(0.0f, 0.0f, rotationZ);
-        bullet.GetComponent<Rigidbody2D>().velocity = direction * _bulletSpeed * Time.deltaTime;
+        bullet.GetComponent<Rigidbody2D>().velocity = direction * _bulletSpeed;
         bullet.GetComponent<DestroyBullets>();
     }
 }

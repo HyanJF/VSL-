@@ -130,6 +130,7 @@ GameObject:
   - component: {fileID: 1516511387127839525}
   - component: {fileID: 8373591674063043490}
   - component: {fileID: 8091055629842318799}
+  - component: {fileID: -359417723685996450}
   m_Layer: 0
   m_Name: Boss1
   m_TagString: Enemy
@@ -146,7 +147,7 @@ Transform:
   m_GameObject: {fileID: 8320331329241091748}
   serializedVersion: 2
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 64.23708, y: 11.018618, z: 0}
+  m_LocalPosition: {x: -21.147758, y: -44.44044, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children:
@@ -228,8 +229,8 @@ MonoBehaviour:
   aim: {fileID: 6052457159109996870}
   numberProjectiles: 5
   numberRounds: 5
-  spingProjectilePrefab: {fileID: 2006680416327518119, guid: f63d76ecfeee4fa4590873f00c053ff5, type: 3}
-  dotaoePrefab: {fileID: 2254330417644499866, guid: 7e161dfa86f8ab64090ea6cf06f39dfe, type: 3}
+  spingProjectilePrefab: {fileID: 2006680416327518119, guid: f459a0db3e504584193f90b73abd830b, type: 3}
+  dotaoePrefab: {fileID: 2254330417644499866, guid: c5a7a87de4e59784db0047b411487bd1, type: 3}
   totalShootsdotaoe: 3
   dotaoeSpeed: 5
   destructibleRingPrefab: {fileID: 8220797618528829221, guid: e93c064efeb9f3246a6e681824757f3d, type: 3}
@@ -332,3 +333,17 @@ Animator:
   m_AllowConstantClipSamplingOptimization: 1
   m_KeepAnimatorStateOnDisable: 0
   m_WriteDefaultValuesOnDisable: 0
+--- !u!114 &-359417723685996450
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 8320331329241091748}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 12add309495041545bc5f3cf024073cc, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  dmg: 1
+  tickTimer: 

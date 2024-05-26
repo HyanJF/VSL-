@@ -4,6 +4,7 @@ using UnityEngine;
 public class DOTProjectile : MonoBehaviour
 {
     public GameObject AOEPrefab;
+    public bool hitsPlayer = false;
 
     private void Update()
     {
@@ -12,13 +13,25 @@ public class DOTProjectile : MonoBehaviour
 
     private void OnTriggerEnter2D(Collider2D other)
     {
-        if (other.CompareTag("Enemy"))
+        if (!hitsPlayer)
         {
-            Debug.Log("fire");
-            other.GetComponent<StatusEffectManager>().ApplyDOT(4);
-            AOEPrefab.transform.position = this.transform.position;
-            Instantiate(AOEPrefab);
-            Destroy(gameObject);
+            if (other.CompareTag("Enemy"))
+            {
+                other.GetComponent<StatusEffectManager>().ApplyDOT(4);
+                AOEPrefab.transform.position = this.transform.position;
+                Instantiate(AOEPrefab);
+                Destroy(gameObject);
+            }
+        }
+        else
+        {
+            if (other.CompareTag("Player"))
+            {
+                other.GetComponent<StatusEffectManager>().ApplyDOT(4);
+                AOEPrefab.transform.position = this.transform.position;
+                Instantiate(AOEPrefab);
+                Destroy(gameObject);
+            }
         }
     }
 

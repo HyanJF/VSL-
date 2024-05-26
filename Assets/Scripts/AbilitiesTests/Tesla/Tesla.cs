@@ -16,13 +16,11 @@ public class Tesla : MonoBehaviour
 
             try
             {
-                Debug.Log("Zapping an enemy");
                 other.GetComponent<EnemyStats>().health -= DMG * Time.deltaTime;
                 
             }
             catch (NullReferenceException)
             {
-                Debug.Log("The tesla aint teslaing");
             }
         }
     }
