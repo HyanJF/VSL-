@@ -13,7 +13,7 @@ public class BigBullet : MonoBehaviour
 
     private void OnTriggerEnter2D(Collider2D other)
     {
-        if (hitsPlayer)
+        if (!hitsPlayer)
         {
             if (other.CompareTag("Enemy"))
             {            

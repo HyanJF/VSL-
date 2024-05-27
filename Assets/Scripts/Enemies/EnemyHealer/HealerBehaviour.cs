@@ -22,9 +22,15 @@ public class HealerBehaviour : EnemyBehaviour
     {
         if (target == null)
         {
-            isOnRange = false;
-            target = GameObject.FindGameObjectWithTag(targetTag);
-            targetStats = target.GetComponent<EnemyStats>();
+            try
+            {
+                isOnRange = false;
+                target = GameObject.FindGameObjectWithTag(targetTag);
+                targetStats = target.GetComponent<EnemyStats>();
+            }catch(System.Exception)
+            {
+                Debug.Log("No hay enemigos xd");
+            }
         }
         else
         {

@@ -1,4 +1,6 @@
 using System.Collections;
+using System.Collections.Generic;
+using TMPro;
 using UnityEngine;
 
 public class Stats : MonoBehaviour
@@ -10,6 +12,10 @@ public class Stats : MonoBehaviour
     [SerializeField] private float speed;
     [SerializeField] private float DeadAnimationTime;
     [SerializeField] private GameObject gameoverPanel;
+    [SerializeField] private Animator animator;
+    [SerializeField] private TextMeshProUGUI scoreText;
+    [SerializeField] private TextMeshProUGUI inGameScoreText;
+    public int score = 0;
 
     public int deathCounter;
     // variables balas 
@@ -40,14 +46,33 @@ public class Stats : MonoBehaviour
         if(life < 0)
         {
             life = 0;
-            StartCoroutine(dead());
+            animator.SetTrigger("IsDead");
+            StartCoroutine(Dead());
         }
     }
 
-    public IEnumerator dead()
+    public void UpdateScore(int _score)
+    {
+        score += _score;
+        inGameScoreText.text = "Score " + score;
+    }
+
+    public IEnumerator Dead()
     {
         yield return new WaitForSeconds(DeadAnimationTime);
+        GameObject[] Enemies = GameObject.FindGameObjectsWithTag("Enemy");
+        for (int i = 0; i < Enemies.Length; i++)
+        {
+            Destroy(Enemies[i]);
+        }
+        Enemies = GameObject.FindGameObjectsWithTag("EnemyHealer");
+        for (int i = 0; i < Enemies.Length; i++)
+        {
+            Destroy(Enemies[i]);
+        }
+
         gameoverPanel.SetActive(true);
+        scoreText.text = "Score " + score;
         Destroy(gameObject);
     }
     

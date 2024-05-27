@@ -9,6 +9,7 @@ public class EnemyStats : MonoBehaviour
     public float attackSpeed;
     public float health;
     public EnemyBehaviour behaviour;
+    public int scoreValue;
 
     private void Awake()
     {
@@ -28,8 +29,8 @@ public class EnemyStats : MonoBehaviour
         if(health <= 0)
         {
             Stats.instance.deathCounter++;
+            Stats.instance.UpdateScore(scoreValue);
             Destroy(gameObject);
-            Debug.Log("Die");
         }
 
         if (behaviour != null)

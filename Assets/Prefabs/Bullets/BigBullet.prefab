@@ -75,7 +75,7 @@ SpriteRenderer:
   m_LightmapParameters: {fileID: 0}
   m_SortingLayerID: 0
   m_SortingLayer: 0
-  m_SortingOrder: 0
+  m_SortingOrder: 1
   m_Sprite: {fileID: -1749402194, guid: 1e9c972379f3daf41a9cdb57cc7eb802, type: 3}
   m_Color: {r: 1, g: 1, b: 1, a: 1}
   m_FlipX: 0
@@ -127,6 +127,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   AOEBoomPrefab: {fileID: 7347646439639387649, guid: e2293f7668a3343498b664a5d3803818, type: 3}
+  hitsPlayer: 0
 --- !u!58 &-3001771647529496567
 CircleCollider2D:
   m_ObjectHideFlags: 0
