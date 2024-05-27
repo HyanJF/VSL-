@@ -118,8 +118,8 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   movementSpeed: 5
-  attack: 0
-  attackSpeed: 0
+  attack: 10
+  attackSpeed: 2
   health: 10
   behaviour: {fileID: 7216044765600604728}
   scoreValue: 20

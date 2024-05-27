@@ -2,6 +2,7 @@ using System.Collections;
 using System.Collections.Generic;
 using TMPro;
 using UnityEngine;
+using UnityEngine.UI;
 
 public class Stats : MonoBehaviour
 {
@@ -15,6 +16,7 @@ public class Stats : MonoBehaviour
     [SerializeField] private Animator animator;
     [SerializeField] private TextMeshProUGUI scoreText;
     [SerializeField] private TextMeshProUGUI inGameScoreText;
+    [SerializeField] private Image lifeBar;
     public int score = 0;
 
     public int deathCounter;
@@ -24,6 +26,7 @@ public class Stats : MonoBehaviour
     // Funciones
     private void Start()
     {
+    
         if (instance == null)
         {
             instance = this;
@@ -37,12 +40,14 @@ public class Stats : MonoBehaviour
         takeDamage(0);
 
         life = totallife;
+        lifeBar.fillAmount = life / totallife;
         gameoverPanel.SetActive(false);
     }
 
     public void takeDamage(float damage)
     {
         life -= damage;
+        lifeBar.fillAmount = life / totallife;
         if(life < 0)
         {
             life = 0;
@@ -70,7 +75,7 @@ public class Stats : MonoBehaviour
         {
             Destroy(Enemies[i]);
         }
-
+        Cursor.visible = true;
         gameoverPanel.SetActive(true);
         scoreText.text = "Score " + score;
         Destroy(gameObject);
