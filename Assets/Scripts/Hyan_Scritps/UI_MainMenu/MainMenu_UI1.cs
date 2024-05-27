@@ -1,6 +1,7 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.SceneManagement;
 
 public class MainMenu_UI1 : MonoBehaviour
 {
@@ -12,6 +13,8 @@ public class MainMenu_UI1 : MonoBehaviour
     public GameObject extraMenu;
 
     public GameObject blackPanel;
+
+    
 
     public void Options()
     {
@@ -56,5 +59,10 @@ public class MainMenu_UI1 : MonoBehaviour
     {
         Debug.Log("Game is exiting");
         Application.Quit();
+    }
+
+    public void LoadScene(int sceneId)
+    {
+        SceneManager.LoadScene(sceneId);
     }
 }

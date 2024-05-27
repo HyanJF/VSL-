@@ -18,4 +18,4 @@ MonoBehaviour:
   cooldown: 5
   activeDuration: 0
   bullet: {fileID: 8778740075536475900, guid: 8b407529596f11f4e8d53692a485cdd8, type: 3}
-  bulletSpeed: 2000
+  bulletSpeed: 20
